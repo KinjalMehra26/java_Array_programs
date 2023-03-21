@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class IntersectionOfTwoArrays {
+	
+	public static void intersection(int[] A , int[] B) {
+		for(int i = 0;i < A.length ;i++) {
+			for(int j = 0;j<B.length;j++) {
+				if(A[i]==B[j]) {
+					System.out.print(A[i] + " ");
+					B[j]=Integer.MIN_VALUE;
+					break;
+				}
+				
+			}
+		}
+	}
+	
+	public static int[] takeInput1() {
+		Scanner sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		int arrA[] = new int[size];
+		for(int i = 0;i<size;i++) {
+			arrA[i]=sc.nextInt();
+		}
+		return arrA;
+	}
+	
+	public static int[] takeInput2() {
+		Scanner sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		int arrB[] = new int[size];
+		for(int i = 0;i<size;i++) {
+			arrB[i]=sc.nextInt();
+		}
+		return arrB;
+	}
+	
+	public static void print(int arr[]) {
+		int size = arr.length;
+		for(int i = 0; i < size;i++) {
+			System.out.print( arr[i] + " ");
+		}
+		System.out.println();
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arrA[]=takeInput1();
+		print(arrA);
+		int arrB[]=takeInput2();
+		print(arrB);
+		intersection(arrA,arrB);
+		
+
+	}
+
+}

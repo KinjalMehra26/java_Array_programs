@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class TripletSum {
+
+//FOR SHOWING PAIRS
+	
+//	public static void tripletSum(int [] arr,int sum) {
+//		for(int i = 0;i<arr.length;i++) {
+//			int temp1=arr[i];
+//			for(int j = i+1;j<arr.length;j++) {
+//				int temp2= arr[j];
+//				for(int k = j+1;k<arr.length;k++) {
+//					if(temp1 + temp2 +arr[k]==sum) {
+//						if(temp1<temp2 && temp1<arr[k] ) {
+//							if(temp2<arr[k]) {						
+//								System.out.print("(" + temp1 + ","+ temp2 + "," + arr[k] + ")");
+//							}
+//							else {
+//								System.out.print("(" + temp1 + ","+ arr[k] + "," + temp2 + ")");
+//							}
+//						}
+//						else if(temp2<arr[k] && temp2 <temp1) {
+//							if(temp1<arr[k]) {
+//								System.out.print("(" + temp2 + "," + temp1 + "," + arr[k] + ")");
+//							}
+//							else {
+//								System.out.print("(" + temp2 + "," + arr[k] + "," + temp1 + ")");
+//							}
+//						}
+//						else {			
+//							if(temp1<temp2) {
+//								System.out.print("(" + arr[k] + "," + temp1 + "," + temp2 + ")");
+//							}
+//							else {
+//								System.out.print("(" + arr[k]+ "," + temp2 + "," + temp1 + ")");
+//							}
+//						}
+//					}
+//			   }
+//		   }
+//		}
+//	}
+	  
+
+//for counting pairs
+	public static int findTriplet(int[] arr, int x) {
+        int count=0;
+        for(int i =0;i<arr.length;i++){
+            for(int j = i+1;j<arr.length;j++){
+                for(int k =j+1;k<arr.length;k++){
+                    if(arr[i]+arr[j]+arr[k]==x){
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+	
+	public static int[] takeInput() {
+		Scanner sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+		for(int i = 0;i<size;i++) {
+			arr[i]=sc.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void print(int arr[]) {
+		int size = arr.length;
+		for(int i = 0; i < size;i++) {
+			System.out.print( arr[i] + " ");
+		}
+		System.out.println();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]=takeInput();
+		print(arr);
+		Scanner sc = new Scanner(System.in);
+		int sum = sc.nextInt();
+		int triplet_Sum=findTriplet(arr,sum);
+		System.out.print(triplet_Sum);
+
+	}
+
+	private static int tripletSum(int[] arr, int sum) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class PairSum {
+	
+	public static void PairSum(int [] arr,int sum) {
+		for(int i = 0;i<arr.length;i++) {
+			int temp = arr[i];
+			for(int j = i+1;j<arr.length;j++) {
+				if(temp +arr[j]==sum) {
+					if(temp<arr[j]) {
+						System.out.print("(" + temp + "," + arr[j] + ")");
+					}
+					else if(temp>arr[j]) {
+						System.out.print("(" + arr[j] + "," + temp + ")");
+					}
+					else {
+						System.out.print("(" + temp + "," + arr[j] + ")");
+					}
+				}
+			}
+		}
+	}
+	
+	public static int[] takeInput() {
+		Scanner sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+		for(int i = 0;i<size;i++) {
+			arr[i]=sc.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void print(int arr[]) {
+		int size = arr.length;
+		for(int i = 0; i < size;i++) {
+			System.out.print( arr[i] + " ");
+		}
+		System.out.println();
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]=takeInput();
+		print(arr);
+		Scanner sc = new Scanner(System.in);
+		int sum = sc.nextInt();
+		PairSum(arr,sum);
+
+	}
+
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

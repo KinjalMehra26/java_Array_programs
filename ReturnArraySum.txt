@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class ReturnArraySum {
+	
+	public static int sum(int input[]) {
+		int sum = 0;
+		int n = input.length;
+		for(int i = 0; i < n;i++) {
+			sum = sum + input[i];
+		}
+		return sum;
+	}
+	
+	public static int[] takeInput() {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();   // n = no.of element in array(size)
+		int input[] = new int[n];
+		for(int i = 0; i < n;i++) {
+				input[i]=s.nextInt();
+		 }
+		return input;
+	}
+	     
+	
+	public static void print(int input[]) {
+		int n = input.length;
+		for(int i = 0; i < n;i++) {
+			System.out.print( input[i] + " ");
+		}
+		System.out.println();
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]=takeInput();
+		print(arr);
+		int sumofarray = sum(arr);
+		System.out.println("Sum: "+ sumofarray);
+	
+		
+	}
+
+}
